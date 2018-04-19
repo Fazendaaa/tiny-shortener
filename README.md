@@ -33,6 +33,8 @@ The idea behind this package is for a Open Source class taken at college. The pr
 Since the [TinyURL](https://www.npmjs.com/package/tinyurl) package is a great option after Google has shut down it's shortener service. But the TinyURL has no Promise support, making it difficult to use with any new ECMA standards. As there is a Pull Request(PR) opened supporting this in the project and still isn't merged, the idea behind __tiny-shortener__ is to make a new package that supports this.
 
 ## Installing
+From [NPM](https://www.npmjs.com/package/tiny-shortener)
+
 ```
 npm install tiny-shortener --save-dev
 ```
