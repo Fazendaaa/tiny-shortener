@@ -19,9 +19,7 @@
     },
     "homepage": "https://github.com/Fazendaaa/tiny-shortener#readme",
     "devDependencies": {
-        "typescript": "^2.8.1"
-    },
-    "dependencies": {
+        "typescript": "^2.8.1",
         "@types/dotenv": "^4.0.3",
         "@types/jest": "^22.2.3",
         "@types/node": "^9.6.5",
