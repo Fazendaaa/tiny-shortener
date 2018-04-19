@@ -2,7 +2,7 @@
     "name": "tiny-shortener",
     "version": "1.0.5",
     "description": "A new Tiny URL package with promise/async support.",
-    "main": "dist/src/tiny-shortener.js",
+    "main": "dist/tiny-shortener.js",
     "scripts": {
         "test": "jest --config jest.config.js --ci --runInBand",
         "build": "tsc",
