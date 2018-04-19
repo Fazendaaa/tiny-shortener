@@ -4,7 +4,8 @@
     <br>
     <br>
     <br>
-    <img src="https://github.com/Fazendaaa/tiny-shortener/blob/master/logo/tiny-shortener.png" /img>
+    <img width="260" src="https://github.com/Fazendaaa/tiny-shortener/blob/master/logo/tiny-shortener.png" /img>
+    <br>
     <br>
     <br>
 
