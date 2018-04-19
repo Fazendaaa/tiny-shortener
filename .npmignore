@@ -1,0 +1,14 @@
+__mocks__/
+__tests__/
+coverage/
+docs/
+examples/
+node_modules/
+logo/
+.bithoundrc
+.gitignore
+.travis.yml
+jest.config.js
+tsconfig.json
+tslint.json
+.env

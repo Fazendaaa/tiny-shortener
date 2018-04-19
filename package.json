@@ -1,0 +1,35 @@
+{
+    "name": "tiny-shortener",
+    "version": "1.0.0",
+    "description": "A new Tiny URL package with promise/async support.",
+    "main": "dist/src/tiny-shortener.js",
+    "scripts": {
+        "test": "jest --config jest.config.js --ci --runInBand",
+        "build": "tsc",
+        "watch": "tsc -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Fazendaaa/tiny-shortener.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Fazendaaa/tiny-shortener/issues"
+    },
+    "homepage": "https://github.com/Fazendaaa/tiny-shortener#readme",
+    "devDependencies": {
+        "typescript": "^2.8.1"
+    },
+    "dependencies": {
+        "@types/dotenv": "^4.0.3",
+        "@types/jest": "^22.2.3",
+        "@types/node": "^9.6.5",
+        "coveralls": "^3.0.0",
+        "dotenv": "^5.0.1",
+        "jest": "^22.4.3",
+        "ts-jest": "^22.4.3",
+        "tslint-config-airbnb": "^5.8.0"
+    }
+}

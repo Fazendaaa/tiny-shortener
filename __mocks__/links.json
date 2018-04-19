@@ -1,0 +1,10 @@
+{
+    "TypeScript": {
+        "input": "https://www.typescriptlang.org/",
+        "output": "http://tinyurl.com/j6laat4"
+    },
+    "nonUrl": {
+        "input": "nonUrl",
+        "output": "http://tinyurl.com/y6u49kbj"
+    }
+}
