@@ -12,9 +12,8 @@
         "type": "git",
         "url": "git+https://github.com/Fazendaaa/tiny-shortener.git"
     },
-    "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/Fazendaaa/tiny-shortener/issues"
     },
@@ -31,5 +30,11 @@
         "jest": "^22.4.3",
         "ts-jest": "^22.4.3",
         "tslint-config-airbnb": "^5.8.0"
-    }
+    },
+    "keywords": [
+        "tiny",
+        "url",
+        "shortener",
+        "short"
+    ]
 }
