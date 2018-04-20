@@ -52,7 +52,7 @@ const shortened = <string> await tiny('www.microsoft.com').catch((error: Error) 
 ### JavaScript
 With Promises support but works with async/await as well:
 ```javascript
-const tiny = require('tiny-shortener');
+const tiny = require('tiny-shortener').tiny;
 
 tiny('www.microsoft.com').then(shortened => {
     console.log(shortened);
