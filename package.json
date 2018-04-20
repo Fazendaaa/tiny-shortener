@@ -1,6 +1,6 @@
 {
     "name": "tiny-shortener",
-    "version": "1.0.6",
+    "version": "1.1.0",
     "description": "A new Tiny URL package with promise/async support.",
     "main": "dist/src/tiny-shortener.js",
     "scripts": {
