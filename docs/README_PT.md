@@ -33,7 +33,7 @@ A ideia por trás desse pacto é para uma atividade na aula de Open Source da fa
 Como o pacote [TinyURL](https://www.npmjs.com/package/tinyurl) se tornou uma grande opção após o Google desligar o seu serviço. Porém o TinyURL não possui suporte a Promise, tornando díficil o uso com os mais recentes padrões ECMA. Há um Pull Request(PR) aberto no projeto que dá suporte a isso mas não foi adicionado ao código, a ideia por trás do __tiny-shortener__ é fazer um novo pacote que suporte isso.
 
 ## Instalando
-Pelo [NPM](https://www.npmjs.com/package/tiny-shortener)
+Pelo [npm](https://www.npmjs.com/package/tiny-shortener):
 
 ```
 npm install tiny-shortener --save-dev
@@ -46,7 +46,7 @@ import { tiny } from 'tiny-shortener';
 const shortened: string = await tiny('www.microsoft.com').catch((error: Error) => console.error(error));
 ```
 
-### Examplos
+### Exemplos
 Veja os exemplos na pasta [examples](https://github.com/Fazendaaa/tiny-shortener/blob/master/examples).
 
 ## Por que TypeScript?
@@ -62,7 +62,7 @@ Através do Test Driven Development(TDD), foi utilizado a ferramenta do Facebook
 O versionamento é gerenciado através do npm mesmo.
 
 ## Construído com
-* Basciamente Node.js + TS.
+* Basicamente Node.js + TS.
 
 ## Contribuindo
 Nós estamos abertos para PR com tanto que explicite bem a necessidade através de uma issue.
