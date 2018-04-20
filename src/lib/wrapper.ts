@@ -1,7 +1,7 @@
 #!/usr/bin/env typescript
 
 /**
- * Tiny lib.
+ * Wrapper lib.
  */
 'use strict';
 
@@ -45,3 +45,8 @@ new Promise((resolve: (shortened: string) => void, reject: (error: Error) => voi
         reject(new TypeError(`Wrong parameter type: ${typeof(url)}. String was expected.`));
     }
 });
+
+/**
+ * For those in JavaScript that still don't use the default import model.
+ */
+export default wrapper;

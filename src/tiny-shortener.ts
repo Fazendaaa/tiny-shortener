@@ -1,7 +1,7 @@
 #!/usr/bin/env typescript
 
 /**
- * Main wrapper.
+ * Tiny lib.
  */
 'use strict';
 
@@ -12,3 +12,8 @@ import { wrapper } from './lib/wrapper';
  * @param url link to be shorted.
  */
 export const tiny = (url: string): Promise<string> => wrapper('https://tinyurl.com/api-create.php?url=', url);
+
+/**
+ * For those in JavaScript that still don't use the default import model.
+ */
+export default tiny;
