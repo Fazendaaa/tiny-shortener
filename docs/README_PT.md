@@ -37,7 +37,7 @@ Como esse pacote apenas usa os padrões de [Node](https://nodejs.org/), ele ser�
 
 ### npm
 ```
-npm install tiny-shortener --save-dev
+npm install tiny-shortener --save
 ```
 
 ## Usando
@@ -99,4 +99,5 @@ Veja [LICENSE](https://github.com/Fazendaaa/tiny-shortener/blob/master/LICENSE) 
 
 ## Agradecimentos
 * [Mocklab](app.mocklab.io) - Pelo sistema de teste de API.
-* Stormpath - [Este](https://stormpath.com/blog/how-to-write-middleware-for-express-apps) tutorial express tutorial na hora de escrever exemplos.
+* Stormpath - [Este](https://stormpath.com/blog/how-to-write-middleware-for-express-apps) tutorial express tutorial na hora de escrever exemplos;
+* Object Calisthenics - [Este](https://medium.com/web-engineering-vox/improving-code-quality-with-object-calisthenics-aa4ad67a61f1) post ajudou a entender um novo conceito graça ao feedback do [@vinicius73](https://t.me/vinicius73) no grupo de [Node.js](https://t.me/NodejsBR) no Telegram.
