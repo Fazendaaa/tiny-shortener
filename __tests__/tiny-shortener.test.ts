@@ -92,6 +92,12 @@ describe('Running test to tiny function.', () => {
         await expect(tiny(links.TypeScript.input)).resolves.toEqual(links.TypeScript.output);
     });
 
+    test('[ASYNC] Shortening without HTTPS and WWWW.', async () => {
+        expect.assertions(1);
+
+        await expect(tiny(links.without.input)).resolves.toEqual(links.without.output);
+    });
+
     /**
      *******************************************************************************************************************
      ************************************************** PROMISES *******************************************************
@@ -132,5 +138,11 @@ describe('Running test to tiny function.', () => {
         expect.assertions(1);
 
         return expect(tiny(links.TypeScript.input)).resolves.toEqual(links.TypeScript.output);
+    });
+
+    test('[PROMISE] Shortening without HTTPS and WWWW.', () => {
+        expect.assertions(1);
+
+        return expect(tiny(links.without.input)).resolves.toEqual(links.without.output);
     });
 });

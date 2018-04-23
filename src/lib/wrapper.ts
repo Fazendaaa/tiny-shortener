@@ -9,11 +9,18 @@ import { get } from 'https';
 import { IncomingMessage } from 'http';
 
 /**
+ * Since Tiny URL works only with URL links that have WWW attached to it, this function does this checking.
+ */
+const verifyURL = (url: string): string => {
+    return url.includes('www.') ? url : 'www.'.concat(url);
+};
+
+/**
  * Function that does all the heavy work for wrapper.
  */
 const getAPI = (api: string, url: string): Promise<string> =>
 new Promise((resolve: (shortened: string) => void, reject: (error: Error) => void) => {
-    get(`${api}${encodeURIComponent(url)}`, (res: IncomingMessage) => {
+    get(`${api}${encodeURIComponent(verifyURL(url))}`, (res: IncomingMessage) => {
         const { statusCode } = res;
 
         /**
@@ -42,13 +49,12 @@ new Promise((resolve: (shortened: string) => void, reject: (error: Error) => voi
      * this  code  when  a  new pattern would mean an unnecessary project overhead. It's only checked whether or not the
      * string empty.
      */
-    if (undefined !== url && 'string' === typeof(url)) {
-        if ('' !== url) {
-            return getAPI(api, url).then(resolve).catch(reject);
-        }
+    if ('string' !== typeof(url)) {
+        reject(new TypeError(`Wrong parameter type: ${typeof(url)}. String was expected.`));
+    } else if ('' === url) {
         reject(new Error('Empty string parameter is not allowed.'));
     }
-    reject(new TypeError(`Wrong parameter type: ${typeof(url)}. String was expected.`));
+    return getAPI(api, url).then(resolve).catch(reject);
 });
 
 /**

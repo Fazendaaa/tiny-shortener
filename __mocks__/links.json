@@ -5,6 +5,10 @@
     },
     "nonUrl": {
         "input": "nonUrl",
-        "output": "http://tinyurl.com/y6u49kbj"
+        "output": "http://tinyurl.com/y6uz59dz"
+    },
+    "without": {
+        "input": "typescriptlang.org/",
+        "output": "http://tinyurl.com/y8kdkzvl"
     }
 }
