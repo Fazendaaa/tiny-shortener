@@ -24,12 +24,14 @@
 
 </div>
 
-> A new Tiny URL package for Node.js with promise/async support.
+> A new Tiny URL package for Node.js with promise/async and alias support.
 
 ## About
 The idea behind this package is for a Open Source class taken at college. The professor wanted us to make a contribution to an OSS project.
 
-Since the [TinyURL](https://www.npmjs.com/package/tinyurl) package is a great option after [Google](https://www.theverge.com/2018/3/31/17184164/google-alphabet-url-shortening-service-closed) has shut down it's shortener service. But the TinyURL has no Promise support, making it difficult to use with any new [ECMA](https://www.w3schools.com/js/js_versions.asp) standards. As there is a Pull Request(PR) opened supporting this in the project and still isn't merged, the idea behind __tiny-shortener__ is to make a new package that supports this.
+Since the [TinyURL](https://www.npmjs.com/package/tinyurl) package is a great option after [Google](https://www.theverge.com/2018/3/31/17184164/google-alphabet-url-shortening-service-closed) has shut down it's shortener service. But the TinyURL has no Promise support, making it difficult to use with any new [ECMA](https://www.w3schools.com/js/js_versions.asp) standards. As there is a Pull Request(PR) opened supporting this in the project and still isn't merged, the idea behind __tiny-shortener__ is to make a new package that supports this and goes a step further supporting alias, letting the user personalize the shortened URL.
+
+obs: in case that that the alias isn't available the request still works but falls back to an default shortened link.
 
 ## Installing
 ### Requirements
@@ -41,15 +43,23 @@ npm install tiny-shortener --save
 ```
 
 ## Using it
-### TypeScript
+
+### tiny(url, [alias])
+* url <string> - Link to be shortened;
+* alias <string> - Wanted personalization link;
+* Returns <Promise<string>> - Shortened link or rejects an error.
+
+### Examples
+#### TypeScript
 With async/await support but works with Promises as well:
 ```typescript
 import { tiny } from 'tiny-shortener';
 
 const shortened = <string> await tiny('www.microsoft.com').catch((error: Error) => console.error(error));
+const aliased = <string> await tiny('www.typescriptlang.org/', 'tslang').catch((error: Error) => console.error(error));
 ```
 
-### JavaScript
+#### JavaScript
 With Promises support but works with async/await as well:
 ```javascript
 const tiny = require('tiny-shortener').tiny;
@@ -59,9 +69,16 @@ tiny('www.microsoft.com').then(shortened => {
 }).catch(error => {
     console.error(error);
 });
+
+// with alias
+tiny('www.typescriptlang.org/', 'tslang').then(shortened => {
+    console.log(shortened);
+}).catch(error => {
+    console.error(error);
+});
 ```
 
-### Examples
+#### See more
 See more in the [examples](https://github.com/Fazendaaa/tiny-shortener/blob/master/examples) folder. Only TypeScript(TS) examples, to see JavaScript(JS) examples clone this project and generate the examples through:
 
 ```bash

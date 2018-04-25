@@ -19,16 +19,17 @@ import { wrapper } from './lib/wrapper';
  * @async
  * @function tiny
  * @example
- * tiny('https://www.typescriptlang.org/').then(link)
- * // link == 'http://tinyurl.com/j6laat4'
+ * tiny('https://www.typescriptlang.org/').then(console.log)
+ * // 'http://tinyurl.com/j6laat4'
  * @example
- * await tiny('https://www.typescriptlang.org/')
- * // returns 'http://tinyurl.com/j6laat4'
- * @param {string} url URL link to be shortened.
+ * tiny('https://www.typescriptlang.org/', 'typescript').then(console.log)
+ * // 'http://tinyurl.com/typescript'
+ * @param {string} url link to be shortened.
+ * @param {string} alias personalized name for URL.
  * @throws {Error | TypeError} Rejects in case of connections errors.
  * @returns {Promise<string>} Link shortened.
  */
-export const tiny = (url: string): Promise<string> => wrapper('https://tinyurl.com/api-create.php?url=', url);
+export const tiny = (url: string, alias?: string): Promise<string> => wrapper('https://tinyurl.com/create.php?source=indexpage', url, alias);
 
 /**
  * For those in JavaScript that still don't use the default import model.

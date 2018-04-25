@@ -1,14 +1,33 @@
 {
     "TypeScript": {
         "input": "https://www.typescriptlang.org/",
-        "output": "http://tinyurl.com/j6laat4"
+        "output": "https://tinyurl.com/j6laat4"
+    },
+    "withAlias": {
+        "input": "https://www.typescriptlang.org/",
+        "alias": "typescript-lang",
+        "output": "https://tinyurl.com/typescript-lang"
     },
     "nonUrl": {
         "input": "nonUrl",
-        "output": "http://tinyurl.com/y6uz59dz"
+        "output": "https://tinyurl.com/yc9korcr"
     },
     "without": {
-        "input": "typescriptlang.org/",
-        "output": "http://tinyurl.com/y8kdkzvl"
+        "both": {
+            "input": "typescriptlang.org/",
+            "output": "https://tinyurl.com/8qa7mfd"
+        },
+        "http": {
+            "input": "www.fazendaaa.me/",
+            "output": "https://tinyurl.com/ycvz79ac"
+        },
+        "https": {
+            "input": "www.typescriptlang.org/",
+            "output": "https://tinyurl.com/8qa7mfd"
+        },
+        "www": {
+            "input": "https://typescriptlang.org/",
+            "output": "https://tinyurl.com/ycr9vth6"
+        }
     }
 }

@@ -11,9 +11,14 @@
  */
 import { config } from 'dotenv';
 import { readFileSync } from 'fs';
+import { IncomingMessage } from 'http';
+import { get } from 'https';
 import { join } from 'path';
 import { tiny } from '../src/tiny-shortener';
-import { wrapper } from '../src/lib/wrapper';
+import {
+    getAPI,
+    wrapper
+} from '../src/lib/wrapper';
 
 /**
  * Just allowing it to read environment variables.
@@ -42,30 +47,30 @@ beforeAll(async () => {
  */
 describe('Running test to tiny function.', () => {
     const typeError: TypeError = new TypeError('Wrong parameter type: undefined. String was expected.');
-    const error: Error = new Error('Empty string parameter is not allowed.');
+    const linkError: Error = new Error('Empty link parameter is not allowed.');
+    const aliasError: Error = new Error('Empty alias parameter is not allowed.');
 
-    /**
-     *******************************************************************************************************************
-     **************************************************** ASYNC ********************************************************
-     *******************************************************************************************************************
-     */
-    
-    test('[ASYNC] Shortening undefined.', async () => {
+    test('Non connection scenario.', async () => {
         expect.assertions(1);
+
+        /**
+         * Technically  speaking  this  function must return a ClientRequest from http package, but since this is only a
+         * mock there's no need, in this case, in diving so deep into it.
+         */
+        const mockGet = (request: string, callback: (res: IncomingMessage) => void) => {
+            return {
+                on: (type: string, callback: (response) => void) => {
+                    if ('error' ===  type) {
+                        callback(new Error('No connection.'));
+                    }
+                }
+            };
+        };
         
-        await expect(tiny(undefined)).rejects.toEqual(typeError);
+        await expect(getAPI(mockGet, process.env.MOCK_API, links.nonUrl.input)).rejects.toThrow();
     });
 
-    test('[ASYNC] Shortening nothing.', async () => {
-        expect.assertions(1);
-
-        await expect(tiny('')).rejects.toEqual(error);
-    });
-
-    /**
-     * This test will emulate cases that the Tiny URL Api is down.
-     */
-    test('[ASYNC] Iº shortening of a parameter that breaks API.', async () => {
+    test('API down scenario.', async () => {
         expect.assertions(1);
         
         /**
@@ -74,75 +79,66 @@ describe('Running test to tiny function.', () => {
         await expect(wrapper(process.env.MOCK_API, links.nonUrl.input)).rejects.toThrow();
     });
 
-    test('[ASYNC] IIº shortening of a parameter that breaks API.', async () => {
+    test('Shortening undefined.', async () => {
         expect.assertions(1);
 
-        await expect(wrapper(`${process.env.MOCK_API}/error/`, links.nonUrl.input)).rejects.toThrow();
+        await expect(tiny(undefined)).rejects.toEqual(typeError);
     });
 
-    test('[ASYNC] Shortening a non URL.', async () => {
+    test('Shortening nothing.', async () => {
+        expect.assertions(1);
+
+        await expect(tiny('')).rejects.toEqual(linkError);
+    });
+
+    test('Shortening a non URL.', async () => {
         expect.assertions(1);
 
         await expect(tiny(links.nonUrl.input)).resolves.toEqual(links.nonUrl.output);
     });
 
-    test('[ASYNC] Shortening TypeScript website.', async () => {
+    test('Shortening without HTTPS and WWWW.', async () => {
+        expect.assertions(1);
+
+        await expect(tiny(links.without.both.input)).resolves.toEqual(links.without.both.output);
+    });
+
+    /**
+     * This one is my portfolio and, unfortunately, the web site that made it still doesn't allow https.
+     */
+    test('Shortening without HTTP.', async () => {
+        expect.assertions(1);
+
+        await expect(tiny(links.without.http.input)).resolves.toEqual(links.without.http.output);
+    });
+
+    test('Shortening without HTTPS.', async () => {
+        expect.assertions(1);
+
+        await expect(tiny(links.without.https.input)).resolves.toEqual(links.without.https.output);
+    });
+
+    test('Shortening without www.', async () => {
+        expect.assertions(1);
+
+        await expect(tiny(links.without.www.input)).resolves.toEqual(links.without.www.output);
+    });
+
+    test('Shortening TypeScript website.', async () => {
         expect.assertions(1);
 
         await expect(tiny(links.TypeScript.input)).resolves.toEqual(links.TypeScript.output);
     });
 
-    test('[ASYNC] Shortening without HTTPS and WWWW.', async () => {
+    test('Shortening TypeScript website with an empty alias.', async () => {
         expect.assertions(1);
 
-        await expect(tiny(links.without.input)).resolves.toEqual(links.without.output);
+        await expect(tiny(links.withAlias.input, '')).rejects.toEqual(aliasError);
     });
-
-    /**
-     *******************************************************************************************************************
-     ************************************************** PROMISES *******************************************************
-     *******************************************************************************************************************
-     */
-
-    test('[PROMISE] Shortening undefined.', () => {
+    
+    test('Shortening TypeScript website with alias support.', async () => {
         expect.assertions(1);
-
-        return expect(tiny(undefined)).rejects.toThrow();
-    });
-
-    test('[PROMISE] Shortening nothing.', () => {
-        expect.assertions(1);
-
-        return expect(tiny('')).rejects.toThrow();
-    });
-
-    test('[PROMISE] Iº shortening of a parameter that breaks API.', () => {
-        expect.assertions(1);
-
-        return expect(wrapper(process.env.MOCK_API, links.nonUrl.input)).rejects.toThrow();
-    });
-
-    test('[PROMISE] IIº shortening of a parameter that breaks API.', () => {
-        expect.assertions(1);
-
-        return expect(wrapper(`${process.env.MOCK_API}/error/`, links.nonUrl.input)).rejects.toThrow();
-    });
-
-    test('[PROMISE] Shortening a non URL.', () => {
-        expect.assertions(1);
-
-        return expect(tiny(links.nonUrl.input)).resolves.toEqual(links.nonUrl.output);
-    });
-
-    test('[PROMISE] Shortening TypeScript website.', () => {
-        expect.assertions(1);
-
-        return expect(tiny(links.TypeScript.input)).resolves.toEqual(links.TypeScript.output);
-    });
-
-    test('[PROMISE] Shortening without HTTPS and WWWW.', () => {
-        expect.assertions(1);
-
-        return expect(tiny(links.without.input)).resolves.toEqual(links.without.output);
+        
+        await expect(tiny(links.withAlias.input, links.withAlias.alias)).resolves.toEqual(links.withAlias.output);
     });
 });
