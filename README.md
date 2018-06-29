@@ -13,7 +13,7 @@
 [![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](https://github.com/Fazendaaa/tiny-shortener/blob/master/docs/README_PT.md)
 
 
-[![bitHound Overall Score](https://www.bithound.io/github/Fazendaaa/tiny-shortener/badges/score.svg?style=flat-square)](https://www.bithound.io/github/Fazendaaa/tiny-shortener)
+[![Maintainability](https://api.codeclimate.com/v1/badges/04c334bbe522d8a0823f/maintainability)](https://codeclimate.com/github/Fazendaaa/tiny-shortener/maintainability)
 [![npm](https://img.shields.io/npm/dt/tiny-shortener.svg?style=flat-square)](https://www.npmjs.com/package/tiny-shortener)
 [![Build Status](https://travis-ci.org/Fazendaaa/tiny-shortener.svg?branch=master)](https://travis-ci.org/Fazendaaa/tiny-shortener)
 [![Dependencies](https://david-dm.org/Fazendaaa/tiny-shortener.svg?style=flat-square)](https://github.com/Fazendaaa/tiny-shortener/blob/master/package.json)
