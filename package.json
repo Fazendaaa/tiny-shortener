@@ -20,6 +20,7 @@
     },
     "homepage": "https://github.com/Fazendaaa/tiny-shortener#readme",
     "devDependencies": {
+        "@types/commander": "^2.12.2",
         "@types/dotenv": "^4.0.3",
         "@types/express": "^4.11.1",
         "@types/jest": "^22.2.3",
@@ -38,5 +39,11 @@
         "url",
         "shortener",
         "short"
-    ]
+    ],
+    "bin": {
+        "shorten": "./dist/cli.js"
+    },
+    "dependencies": {
+        "commander": "^2.19.0"
+    }
 }
