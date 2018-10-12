@@ -2,25 +2,19 @@
 
 <div align="center">
     <br>
-    <br>
-    <br>
-    <img width="260" src="https://raw.githubusercontent.com/Fazendaaa/tiny-shortener/master/logo/tiny-shortener.png" /img>
-    <br>
-    <br>
+    <img width="260" src="./logo/tiny-shortener.png" /img>
     <br>
 
-[![English README](https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge)](https://github.com/Fazendaaa/tiny-shortener/blob/master/README.md)
-[![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](https://github.com/Fazendaaa/tiny-shortener/blob/master/docs/README_PT.md)
+[![English README](https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge)](./README.md)
+[![Portuguese README](https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge)](./README.PT.md)
 
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/04c334bbe522d8a0823f/maintainability)](https://codeclimate.com/github/Fazendaaa/tiny-shortener/maintainability)
+[![npm](https://img.shields.io/npm/v/tiny-shortener.svg?style=flat-square)](https://www.npmjs.com/package/tiny-shortener)
 [![npm](https://img.shields.io/npm/dt/tiny-shortener.svg?style=flat-square)](https://www.npmjs.com/package/tiny-shortener)
+[![Maintainability](https://api.codeclimate.com/v1/badges/04c334bbe522d8a0823f/maintainability)](https://codeclimate.com/github/Fazendaaa/tiny-shortener/maintainability)
 [![Build Status](https://travis-ci.org/Fazendaaa/tiny-shortener.svg?branch=master)](https://travis-ci.org/Fazendaaa/tiny-shortener)
 [![Dependencies](https://david-dm.org/Fazendaaa/tiny-shortener.svg?style=flat-square)](https://github.com/Fazendaaa/tiny-shortener/blob/master/package.json)
-[![Coverage Status](https://coveralls.io/repos/github/Fazendaaa/tiny-shortener/badge.svg?branch=master)](https://coveralls.io/github/Fazendaaa/tiny-shortener?branch=master)
-[![npm](https://img.shields.io/npm/v/tiny-shortener.svg?style=flat-square)](https://www.npmjs.com/package/tiny-shortener)
-[![Maintainability](https://api.codeclimate.com/v1/badges/04c334bbe522d8a0823f/maintainability)](https://codeclimate.com/github/Fazendaaa/tiny-shortener/maintainability)
-
+[![codecov](https://img.shields.io/codecov/c/github/Fazendaaa/endeavor.svg?style=flat-square)](https://codecov.io/gh/Fazendaaa/tiny-shortener)
 
 </div>
 
@@ -55,8 +49,12 @@ With async/await support but works with Promises as well:
 ```typescript
 import { tiny } from 'tiny-shortener';
 
-const shortened = <string> await tiny('www.microsoft.com').catch((error: Error) => console.error(error));
-const aliased = <string> await tiny('www.typescriptlang.org/', 'tslang').catch((error: Error) => console.error(error));
+const asyncRequest = async (): Promise<void> => {
+    const shortened = <string> await tiny('www.microsoft.com');
+    const aliased = <string> await tiny('www.typescriptlang.org/', 'tslang');
+
+    console.log(`Without alias is: ${shortened}\nWith alias: ${aliased}`);
+};
 ```
 
 #### JavaScript
@@ -64,55 +62,57 @@ With Promises support but works with async/await as well:
 ```javascript
 const tiny = require('tiny-shortener').tiny;
 
-tiny('www.microsoft.com').then(shortened => {
-    console.log(shortened);
-}).catch(error => {
-    console.error(error);
-});
+tiny('www.microsoft.com')
+    .then(console.log)
+    .catch(console.error);
 
 // with alias
-tiny('www.typescriptlang.org/', 'tslang').then(shortened => {
-    console.log(shortened);
-}).catch(error => {
-    console.error(error);
+tiny('www.typescriptlang.org/', 'tslang')
+    .then(console.log)
+    .catch(console.error);
 });
+```
+
+#### CLI
+```shell
+tiny-shortener --url www.example.com
+```
+
+Or even with alias support:
+```shell
+tiny-shortener --url www.foo.com --personalization bar
 ```
 
 #### See more
-See more in the [examples](https://github.com/Fazendaaa/tiny-shortener/blob/master/examples) folder. Only TypeScript(TS) examples, to see JavaScript(JS) examples clone this project and generate the examples through:
-
-```bash
-npm run build
-```
+See more in the [examples](./examples) folder.
 
 ## Why TypeScript?
 TS users suffer from having to make the typings for a large part of little projects. We've decide to make this as a TS project to allow a painless interoperability.
 
 ### Style code
-Using the [Airbnb](https://www.npmjs.com/package/tslint-config-airbnb) style code.
+Using the [Microsoft](https://github.com/Microsoft/tslint-microsoft-contrib) style code.
 
 ## Testing
-With [Test Driven Development(TDD)](https://en.wikipedia.org/wiki/Test-driven_development) in mind, we've used the Facebook's [Jest](https://facebook.github.io/jest/) test runner through the [ts-jest](https://www.npmjs.com/package/ts-jest) package to run with the need to compiling the code. See more in [__ tests __](https://github.com/Fazendaaa/tiny-shortener/blob/master/__tests__) folder;
+With [Test Driven Development(TDD)](https://en.wikipedia.org/wiki/Test-driven_development) in mind, we've used the Facebook's [Jest](https://facebook.github.io/jest/) test runner through the [ts-jest](https://www.npmjs.com/package/ts-jest) package to run with the need to compiling the code. See more in [ci](./ci) folder;
 
 ## Versioning
 Versioning is made through npm versioning system. You can see what version is in the badge at the top of this README.
 
 ## Build with
-* Basically Node.js + TS.
+* [commander](https://github.com/tj/commander.js).
 
 ## Contributing
 We're opened to PRs as long you open an issue before explaining what you will be pushing and we will see if fits.
 
 ## TODO
-* Write some more examples;
-* CLI support.
+* Write some more examples
 
 ## Authors
 * [Fazendaaa](https://github.com/Fazendaaa) - The one and only;
 * [pit00](https://github.com/pit00) - Du Hast.
 
 ## License
-See [LICENSE](https://github.com/Fazendaaa/tiny-shortener/blob/master/LICENSE) for more about it.
+See [LICENSE](./LICENSE) for more about it.
 
 ## Acknowledges
 * [Mocklab](app.mocklab.io) - System of mocking API request for testing;

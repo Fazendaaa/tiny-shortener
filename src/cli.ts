@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 import * as commander from 'commander';
-import { tiny } from './tiny-shortener';
+import { tiny } from 'tiny-shortener';
 
-async function shortenUrl(url: string, alias?: string) {
-    const shortURL = await tiny(url, alias);
-    console.log(shortURL);
-}
+const shortenUrl = async (output: string, alias?: string): Promise<void> => tiny(output, alias).then(console.log);
 
 commander
-    .version('1.3.0')
+    .version('2.0.0')
     .description('Tiny shortener');
 
 commander
@@ -17,10 +14,15 @@ commander
 
 commander.parse(process.argv);
 
-// if url option isn't set, use the first arg encountered
-const url = commander.url || (commander.args.length && commander.args[0]);
+let url = '';
 
-if (url) {
+if (undefined !== commander.url) {
+    url = commander.url;
+} if (1 < commander.args.length) {
+    url = commander.args[0];
+}
+
+if ('' !== url) {
     shortenUrl(url, commander.personalization);
 } else {
     commander.outputHelp();

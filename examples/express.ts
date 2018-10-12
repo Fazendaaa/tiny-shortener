@@ -6,17 +6,13 @@
 'use strict';
 
 import * as express from 'express';
-import {
-    Request,
-    Response,
-    NextFunction
-} from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { tiny } from '../src/tiny-shortener';
 
 const app = express();
 const asyncRouter = express.Router();
 const promiseRouter = express.Router();
-const port: number = 8080;
+const port = 8080;
 
 /**
  * Tiny router for express.

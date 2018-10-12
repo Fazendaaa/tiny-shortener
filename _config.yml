@@ -1,1 +1,8 @@
-theme: jekyll-theme-hacker
+src: docs/
+exclude: [
+  "README.md",
+  "README.PT.md"
+]
+include:
+  - "_*_.html"
+  - "_*_.*.html"

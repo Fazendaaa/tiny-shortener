@@ -1,7 +1,10 @@
 language: node_js
 node_js:
- - "node"
+  "node"
 cache:
   directories:
-    - "node_modules"
-after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "node_modules"
+scripts:
+  npm install -g codecov
+after_success:
+  codecov

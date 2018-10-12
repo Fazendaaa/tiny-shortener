@@ -1,19 +1,34 @@
 {
-    "name": "tiny-shortener",
-    "globals": {
-        "ts-jest": {
-            "enableTsDiagnostics": true
-        }
-    },
+    "bail": true,
+    "expand": true,
     "verbose": true,
+    "rootDir": "./",
+    "useStderr": true,
+    "forceExit": true,
+    "logHeapUsage": true,
+    "collectCoverage": true,
+    "name": "tiny-shortener",
+    "testURL": "http://localhost/",
+    "coverageDirectory": "./coverage",
+    "testRegex": "(./ci/tests/.*| (\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "transform": {
         "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleNameMapper": {
+        "cli": "<rootDir>/src/cli.ts",
+        "parse": "<rootDir>/src/lib/parse.ts",
+        "wrapper": "<rootDir>/src/lib/wrapper.ts",
+        "tiny-shortener": "<rootDir>/src/tiny-shortener.ts"
     },
     "coveragePathIgnorePatterns": [
         "./node_modules/",
         "./dist/"
     ],
-    "testRegex": "(./__tests__/.*| (\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "coverageReporters": [
+        "json",
+        "lcov",
+        "text"
+    ],
     "moduleFileExtensions": [
         "ts",
         "tsx",
@@ -22,15 +37,9 @@
         "json",
         "node"
     ],
-    "collectCoverage": true,
-    "useStderr": true,
-    "forceExit": true,
-    "coverageReporters": [
-        "json",
-        "lcov",
-        "text"
-    ],
-    "expand": true,
-    "logHeapUsage": true,
-    "bail": true
+    "globals": {
+        "ts-jest": {
+            "diagnostics": true
+        }
+    }
 }
