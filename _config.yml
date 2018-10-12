@@ -1,8 +1,0 @@
-src: docs/
-exclude: [
-  "README.md",
-  "README.PT.md"
-]
-include:
-  - "_*_.html"
-  - "_*_.*.html"

@@ -67,21 +67,16 @@
 				<h1 id="tiny-shortener">tiny-shortener</h1>
 				<div align="center">
 					<br>
-					<br>
-					<br>
-					<img width="260" src="https://raw.githubusercontent.com/Fazendaaa/tiny-shortener/master/logo/tiny-shortener.png" /img>
-					<br>
-					<br>
+					<img width="260" src="./logo/tiny-shortener.png" /img>
 					<br>
 					<p><a href="./README.md"><img src="https://img.shields.io/badge/Language-EN-blue.svg?longCache=true&style=for-the-badge" alt="English README"></a>
 					<a href="./README.PT.md"><img src="https://img.shields.io/badge/Linguagem-PT-green.svg?longCache=true&style=for-the-badge" alt="Portuguese README"></a></p>
-					<p><a href="https://codeclimate.com/github/Fazendaaa/tiny-shortener/maintainability"><img src="https://api.codeclimate.com/v1/badges/04c334bbe522d8a0823f/maintainability" alt="Maintainability"></a>
+					<p><a href="https://www.npmjs.com/package/tiny-shortener"><img src="https://img.shields.io/npm/v/tiny-shortener.svg?style=flat-square" alt="npm"></a>
 						<a href="https://www.npmjs.com/package/tiny-shortener"><img src="https://img.shields.io/npm/dt/tiny-shortener.svg?style=flat-square" alt="npm"></a>
+						<a href="https://codeclimate.com/github/Fazendaaa/tiny-shortener/maintainability"><img src="https://api.codeclimate.com/v1/badges/04c334bbe522d8a0823f/maintainability" alt="Maintainability"></a>
 						<a href="https://travis-ci.org/Fazendaaa/tiny-shortener"><img src="https://travis-ci.org/Fazendaaa/tiny-shortener.svg?branch=master" alt="Build Status"></a>
 						<a href="https://github.com/Fazendaaa/tiny-shortener/blob/master/package.json"><img src="https://david-dm.org/Fazendaaa/tiny-shortener.svg?style=flat-square" alt="Dependencies"></a>
-						<a href="https://coveralls.io/github/Fazendaaa/tiny-shortener?branch=master"><img src="https://coveralls.io/repos/github/Fazendaaa/tiny-shortener/badge.svg?branch=master" alt="Coverage Status"></a>
-						<a href="https://www.npmjs.com/package/tiny-shortener"><img src="https://img.shields.io/npm/v/tiny-shortener.svg?style=flat-square" alt="npm"></a>
-					<a href="https://codeclimate.com/github/Fazendaaa/tiny-shortener/maintainability"><img src="https://api.codeclimate.com/v1/badges/04c334bbe522d8a0823f/maintainability" alt="Maintainability"></a></p>
+					<a href="https://codecov.io/gh/Fazendaaa/tiny-shortener"><img src="https://img.shields.io/codecov/c/github/Fazendaaa/endeavor.svg?style=flat-square" alt="codecov"></a></p>
 				</div>
 				<blockquote>
 					<p>A new Tiny URL package for Node.js with promise/async and alias support.</p>
@@ -126,20 +121,23 @@ tiny(<span class="hljs-string">'www.typescriptlang.org/'</span>, <span class="hl
     .then(<span class="hljs-built_in">console</span>.log)
     .catch(<span class="hljs-built_in">console</span>.error);
 });</code></pre>
+				<h4 id="cli">CLI</h4>
+				<pre><code class="language-shell">tiny-shortener --url www.example.com</code></pre>
+				<p>Or even with alias support:</p>
+				<pre><code class="language-shell">tiny-shortener --url www.foo.com --personalization bar</code></pre>
 				<h4 id="see-more">See more</h4>
-				<p>See more in the <a href="https://github.com/Fazendaaa/tiny-shortener/blob/master/examples">examples</a> folder. Only TypeScript(TS) examples, to see JavaScript(JS) examples clone this project and generate the examples through:</p>
-				<pre><code class="language-bash">npm run build</code></pre>
+				<p>See more in the <a href="./examples">examples</a> folder.</p>
 				<h2 id="why-typescript-">Why TypeScript?</h2>
 				<p>TS users suffer from having to make the typings for a large part of little projects. We&#39;ve decide to make this as a TS project to allow a painless interoperability.</p>
 				<h3 id="style-code">Style code</h3>
-				<p>Using the <a href="https://www.npmjs.com/package/tslint-config-airbnb">Airbnb</a> style code.</p>
+				<p>Using the <a href="https://github.com/Microsoft/tslint-microsoft-contrib">Microsoft</a> style code.</p>
 				<h2 id="testing">Testing</h2>
-				<p>With <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development(TDD)</a> in mind, we&#39;ve used the Facebook&#39;s <a href="https://facebook.github.io/jest/">Jest</a> test runner through the <a href="https://www.npmjs.com/package/ts-jest">ts-jest</a> package to run with the need to compiling the code. See more in <a href="https://github.com/Fazendaaa/tiny-shortener/blob/master/__tests__">__ tests __</a> folder;</p>
+				<p>With <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development(TDD)</a> in mind, we&#39;ve used the Facebook&#39;s <a href="https://facebook.github.io/jest/">Jest</a> test runner through the <a href="https://www.npmjs.com/package/ts-jest">ts-jest</a> package to run with the need to compiling the code. See more in <a href="./ci">ci</a> folder;</p>
 				<h2 id="versioning">Versioning</h2>
 				<p>Versioning is made through npm versioning system. You can see what version is in the badge at the top of this README.</p>
 				<h2 id="build-with">Build with</h2>
 				<ul>
-					<li>Basically Node.js + TS.</li>
+					<li><a href="https://github.com/tj/commander.js">commander</a>.</li>
 				</ul>
 				<h2 id="contributing">Contributing</h2>
 				<p>We&#39;re opened to PRs as long you open an issue before explaining what you will be pushing and we will see if fits.</p>
@@ -153,7 +151,7 @@ tiny(<span class="hljs-string">'www.typescriptlang.org/'</span>, <span class="hl
 					<li><a href="https://github.com/pit00">pit00</a> - Du Hast.</li>
 				</ul>
 				<h2 id="license">License</h2>
-				<p>See <a href="https://github.com/Fazendaaa/tiny-shortener/blob/master/LICENSE">LICENSE</a> for more about it.</p>
+				<p>See <a href="./LICENSE">LICENSE</a> for more about it.</p>
 				<h2 id="acknowledges">Acknowledges</h2>
 				<ul>
 					<li><a href="app.mocklab.io">Mocklab</a> - System of mocking API request for testing;</li>

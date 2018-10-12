@@ -73,7 +73,7 @@
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_tiny_shortener_.html#baseurl" class="tsd-kind-icon">baseURL</a></li>
+								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_tiny_shortener_.html#api" class="tsd-kind-icon">api</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -88,9 +88,9 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="baseurl" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> baseURL</h3>
-					<div class="tsd-signature tsd-kind-icon">baseURL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://tinyurl.com/create.php?source&#x3D;indexpage"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://tinyurl.com/create.php?source&#x3D;indexpage&quot;</span></div>
+					<a name="api" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> api</h3>
+					<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"https://tinyurl.com/create.php?source&#x3D;indexpage"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://tinyurl.com/create.php?source&#x3D;indexpage&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in <a href="https://github.com/Fazendaaa/tiny-shortener/blob/df57f7c/src/tiny-shortener.ts#L3">tiny-shortener.ts:3</a></li>
@@ -110,23 +110,35 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Fazendaaa/tiny-shortener/blob/df57f7c/src/tiny-shortener.ts#L10">tiny-shortener.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/Fazendaaa/tiny-shortener/blob/df57f7c/src/tiny-shortener.ts#L16">tiny-shortener.ts:16</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Request a URL to be shortened through tinyurl, with the support to alias in this new URL</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>url: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>What URL you want to be shortened</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> alias: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
+											<p>Wanted value to be used as alias</p>
 										</div>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A promise containing the new URL</p>
 						</li>
 					</ul>
 				</section>
@@ -155,7 +167,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_tiny_shortener_.html#baseurl" class="tsd-kind-icon">baseURL</a>
+						<a href="_tiny_shortener_.html#api" class="tsd-kind-icon">api</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_tiny_shortener_.html#tiny" class="tsd-kind-icon">tiny</a>
