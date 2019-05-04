@@ -44,9 +44,6 @@
         "shortener",
         "short"
     ],
-    "bin": {
-        "tiny-shortener": "./dist/cli.js"
-    },
     "dependencies": {
         "commander": "^2.19.0"
     },
