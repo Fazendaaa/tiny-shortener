@@ -2,13 +2,14 @@
     "name": "tiny-shortener",
     "version": "2.2.1",
     "description": "A new Tiny URL package with promise/async support.",
-    "main": "dist/src/tiny-shortener.js",
-    "types": "dist/src/tiny-shortener.d.ts",
+    "main": "dist/tiny-shortener.js",
+    "types": "dist/tiny-shortener.d.ts",
     "scripts": {
         "build": "webpack",
         "doc": "typedoc --out ./docs/ ./src/",
         "deploy": "npm run build && npm publish",
         "lint": "tslint --config tslint.json --project .",
+        "validation": "npm run test && npm run lint && npm run doc",
         "test": "jest --config jest.config.json --ci --runInBand --forceExit --no-cache"
     },
     "repository": {
