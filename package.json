@@ -5,9 +5,9 @@
     "main": "dist/tiny-shortener.js",
     "types": "dist/tiny-shortener.d.ts",
     "scripts": {
-        "build": "webpack",
+        "build": "tsc",
         "doc": "typedoc --out ./docs/ ./src/",
-        "deploy": "npm run build && npm publish",
+        "deploy": "npm run validation && npm run build && npm publish",
         "lint": "tslint --config tslint.json --project .",
         "validation": "npm run test && npm run lint && npm run doc",
         "test": "jest --config jest.config.json --ci --runInBand --forceExit --no-cache"
@@ -16,28 +16,24 @@
         "type": "git",
         "url": "git+https://github.com/Fazendaaa/tiny-shortener.git"
     },
-    "author": "",
+    "author": "Fazendaaa",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/Fazendaaa/tiny-shortener/issues"
     },
     "homepage": "https://github.com/Fazendaaa/tiny-shortener#readme",
     "devDependencies": {
-        "@types/commander": "^2.12.2",
         "@types/jest": "^22.2.3",
         "@types/node": "^9.6.35",
         "body-parser": "^1.18.3",
         "husky": "^1.1.2",
         "jest": "^22.4.4",
         "ts-jest": "^22.4.6",
-        "ts-loader": "^5.2.1",
         "ts-node": "^7.0.1",
         "tslint": "^5.11.0",
         "tslint-microsoft-contrib": "^5.2.1",
         "typedoc": "^0.13.0",
-        "typescript": "^2.9.2",
-        "webpack": "^4.20.2",
-        "webpack-cli": "^3.1.2"
+        "typescript": "^2.9.2"
     },
     "keywords": [
         "tiny",
@@ -45,9 +41,6 @@
         "shortener",
         "short"
     ],
-    "dependencies": {
-        "commander": "^2.19.0"
-    },
     "husky": {
         "hooks": {
             "pre-commit": "npm run lint",

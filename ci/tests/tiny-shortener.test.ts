@@ -16,7 +16,7 @@ describe('Running test to tiny function.', () => {
     const linkError = new Error('Empty link parameter is not allowed.');
     const aliasError = new Error('Empty alias parameter is not allowed.');
 
-    test('Shortening undefined.', async () => expect(tiny(<any> undefined)).rejects.toEqual(typeError));
+    test('Shortening undefined.', async () => expect(tiny(undefined)).rejects.toEqual(typeError));
 
     test('Shortening nothing.', async () => expect(tiny('')).rejects.toEqual(linkError));
 

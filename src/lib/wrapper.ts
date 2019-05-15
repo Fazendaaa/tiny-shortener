@@ -1,6 +1,6 @@
 import { IncomingMessage } from 'http';
 import { get } from 'https';
-import { parseAlias, parseResponse, parseURL } from 'parse';
+import { parseAlias, parseResponse, parseURL } from './parse';
 
 interface HandleGet {
     readonly res: IncomingMessage;
