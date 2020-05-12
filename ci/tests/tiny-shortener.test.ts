@@ -35,4 +35,6 @@ describe('Running test to tiny function.', () => {
     test('Shortening TypeScript website with an empty alias.', async () => expect(tiny(links.withAlias.input, '')).rejects.toEqual(aliasError));
 
     test('Shortening TypeScript website with alias support.', async () => expect(tiny(links.withAlias.input, links.withAlias.alias)).resolves.toEqual(links.withAlias.output));
+
+    test('Shortening website with & in it.', async () => expect(tiny(links.commercialE.input, links.commercialE.alias)).resolves.toEqual(links.commercialE.output));
 });

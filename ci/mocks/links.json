@@ -5,12 +5,12 @@
     },
     "withAlias": {
         "input": "https://www.typescriptlang.org/",
-        "alias": "typescript-lang",
-        "output": "https://tinyurl.com/typescript-lang"
+        "alias": "fatestzenda",
+        "output": "https://tinyurl.com/fatestzenda"
     },
     "nonUrl": {
         "input": "nonUrl",
-        "output": "https://tinyurl.com/yc9korcr"
+        "output": "https://tinyurl.com/yywv3dre"
     },
     "without": {
         "both": {
@@ -19,7 +19,7 @@
         },
         "http": {
             "input": "www.fazendaaa.me/",
-            "output": "https://tinyurl.com/ycvz79ac"
+            "output": "https://tinyurl.com/y5xd6q9u"
         },
         "https": {
             "input": "www.typescriptlang.org/",
@@ -29,5 +29,9 @@
             "input": "https://typescriptlang.org/",
             "output": "https://tinyurl.com/ycr9vth6"
         }
+    },
+    "commercialE": {
+        "input": "https://www.google.com/search?q=url+with+example&client=firefox-b-d&sxsrf=ALeKk02AFUsyy1PZcD7DeJfMOd3EnsovZw:1589325649815&ei=US-7XrCjMZ7E5OUPlsCjgAk&start=0&sa=N&ved=2ahUKEwjwj6i2u6_pAhUeIrkGHRbgCJA4ChDy0wN6BAgMECw&biw=1259&bih=956",
+        "output": "https://tinyurl.com/yadd8qdd"
     }
 }
