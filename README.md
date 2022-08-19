@@ -102,6 +102,10 @@ Versioning is made through npm versioning system. You can see what version is in
 * [commander](https://github.com/tj/commander.js).
 
 ## Contributing
+    
+- [JavaScript and TypeScript](
+https://www.scaler.com/topics/typescript-vs-javascript/)
+    
 We're opened to PRs as long you open an issue before explaining what you will be pushing and we will see if fits.
 
 ## TODO
